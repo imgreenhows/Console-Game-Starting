@@ -2,9 +2,9 @@ using System;
 
 namespace ConsoleGame
 {
-  class Game //: SuperGame
+  class Game : SuperGame
   {
-    public static void UpdatePosition(string key,out int xChange,out int yChange)
+    public new static void UpdatePosition(string key,out int xChange,out int yChange)
         {
             switch (key)
             {
@@ -22,6 +22,22 @@ namespace ConsoleGame
                     break;
                 case "RightArrow":
                     xChange = 1; 
+                    yChange = 0;
+                    break;
+                case "W":
+                    xChange = 0;  
+                    yChange = -1;
+                    break;
+                case "S":
+                    xChange = 0;
+                    yChange = 1;
+                    break;
+                case "A":
+                    xChange = -1;
+                    yChange = 0;
+                    break;
+                case "D":
+                    xChange = 1;
                     yChange = 0;
                     break;
                 default:
@@ -42,20 +58,33 @@ namespace ConsoleGame
                     return '<';
                 case "RightArrow":
                     return '>';
+                case "W":
+                    return '^';
+                case "S":
+                    return 'v';
+                case "A":
+                    return '<';
+                case "D":
+                    return '>';
                 default:
-                    return '&';
+                    return 'X';
             }
         }
-    public new static int KeepInBounds(int dimension, int max)
+    public new static int KeepInBounds(int dimension, int max) //work out how to amend the columns if the number hits the maximum.
         {
-            if(dimension < max && dimension >= 0)
+            if(dimension < 0)
             {
-                return dimension;
+                return max - 1;//return 0;
             }
-            else
+            else if(dimension >= max)
             {
-                return max-1;
+                return 0;//return max-1;
             }
+            else 
+            { 
+                return dimension; 
+            }
+
         }
     public new static bool DidScore(int x1, int y1, int x2, int y2)
         {
