@@ -97,5 +97,24 @@ namespace ConsoleGame
                 return false;
             }
         }
+    public static void WinnerMessage()
+        {
+            string l1 = "         _________ _        _        _______  _______  _  _  _ ";
+            string l2 = "|\\     /|\\__   __/( (    /|( (    /|(  ____ \\(  ____ )( )( )( )";
+            string l3 = "| )   ( |   ) (   |  \\  ( ||  \\  ( || (    \\/| (    )|| || || |";
+            string l4 = "| | _ | |   | |   |   \\ | ||   \\ | || (__    | (____)|| || || |";
+            string l5 = "| |( )| |   | |   | (\\ \\) || (\\ \\) ||  __)   |     __)| || || |";
+            string l6 = "| || || |   | |   | | \\   || | \\   || (      | (\\ (   (_)(_)(_)";
+            string l7 = "| () () |___) (___| )  \\  || )  \\  || (____/\\| ) \\ \\__ _  _  _ ";
+            string l8 = "(_______)\\_______/|/    )_)|/    )_)(_______/|/   \\__/(_)(_)(_)";
+            Console.WriteLine(l1);
+            Console.WriteLine(l2);
+            Console.WriteLine(l3);
+            Console.WriteLine(l4);
+            Console.WriteLine(l5);
+            Console.WriteLine(l6);
+            Console.WriteLine(l7);
+            Console.WriteLine(l8);
+        }
   }
 }

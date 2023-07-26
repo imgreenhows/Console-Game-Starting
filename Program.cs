@@ -71,6 +71,15 @@ namespace ConsoleGame
           fruitCol = rand.Next(cols);
           fruitRow = rand.Next(rows);
         }
+        //add a game end condition. Once you hit 5 it ends the game
+        if (score == 5)
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
+                    Game.WinnerMessage();
+                    break;
+                }
+
       }
     }
   }
